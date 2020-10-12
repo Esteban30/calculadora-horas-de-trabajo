@@ -50,13 +50,7 @@ class ServiciosController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        // $request->validate([
-            
-        //     'fecha_inicio' => 'date_format:Y-m-d',
-        //     'fecha_fin'=>'date_format:Y-m-d',
-        //     'fecha_fin' => 'required|after_or_equal:fecha_inicio',
-        // ]);
+       
         $servicio = new Servicios();
         $servicio->id_cliente=$request->id_cliente;
         $servicio->id_tecnico=$request->id_tecnico;
@@ -109,13 +103,13 @@ class ServiciosController extends Controller
     {
         //
         $servicio = Servicios::findOrFail($request->id_upd);    
-        $servicio->id_cliente=$request->id_cliente;
-        $servicio->id_tecnico=$request->id_tecnico;
-        $servicio->id_servicio=$request->id_servicio;
-        $servicio->fecha_inicio=$request->fecha_inicio;
-        $servicio->fecha_fin=$request->fecha_fin;
-        $servicio->horas_inicio=$request->hora_inicio;
-        $servicio->horas_fin=$request->horas_fin;
+        $servicio->id_cliente=$request->id_cliente_upd;
+        $servicio->id_tecnico=$request->id_tecnico_upd;
+        $servicio->id_servicio=$request->id_servicios_upd;
+        $servicio->fecha_inicio=$request->fecha_inicio_upd;
+        $servicio->fecha_fin=$request->fecha_fin_upd;
+        $servicio->horas_inicio=$request->horas_inicio_upd;
+        $servicio->horas_fin=$request->horas_fin_upd;
     
         $servicio->save();
         

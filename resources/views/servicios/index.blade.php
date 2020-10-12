@@ -9,10 +9,10 @@ function validar() {
     let id_servicio_ =$('#id_servicio').val();
     let fecha_inicio_ =$('#fecha_inicio').val();
     let fecha_fin_ =$('#fecha_fin').val();
-    let horas_inicio =$('#horas_inicio').val();
-    let horas_fin =$('#horas_fin').val();
+    let horas_inicio_ =$('#horas_inicio').val();
+    let horas_fin_ =$('#horas_fin').val();
        
-      
+      console.log(fecha_inicio_);
 
     if (id_cliente_.length == 0  ) {
       Swal.fire("Atención", "El campo Cliente no puede ir vacío", "info")
@@ -26,7 +26,7 @@ function validar() {
       Swal.fire("Atención", "El campo servicio no puede ir vacío.", "info")
       return false;
     }else
-    if (fecha_inicio_.length === "") {
+    if (fecha_inicio_ === "") {
             Swal.fire({
                 title: "El campo fecha no puede ir vacío",
                 text: "Por favor ingresar fecha ",
@@ -34,16 +34,16 @@ function validar() {
             });
             return false;
         } else
-        if (fecha_fin_.length === "") {
-            swal({
+        if (fecha_fin_ === "") {
+            Swal.fire({
                 title: "El campo fecha no puede ir vacío",
                 text: "Por favor ingresar fecha ",
                 icon: "error"
             });
             return false;
         }else
-    if (horas_inicio_ === "") {
-            swal({
+    if (horas_inicio_ ==="") {
+            Swal.fire({
                 title: "El campo horas no puede ir vacío",
                 text: "Por favor ingresar fecha ",
                 icon: "error"
@@ -51,7 +51,7 @@ function validar() {
             return false;
         }else
     if (horas_fin_ === "") {
-            swal({
+            Swal.fire({
                 title: "El campo horas no puede ir vacío",
                 text: "Por favor ingresar fecha ",
                 icon: "error"
@@ -251,7 +251,7 @@ function validar() {
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{url('/clientes')}}" onsubmit='return validar_editar()' method="POST">
+        <form action="{{url('/servicios')}}" onsubmit='return validar_editar()' method="POST">
           {{csrf_field() }}
           <div>
             <div class="form-group col-12 col-md-12 col-lg-12 col-xl-12 col-sm-12">
@@ -301,7 +301,7 @@ function validar() {
         </div>
         
           <div class="col-6">
-            <label for="horas">{{'Hora de inicio'}}</label>
+            <label for="horas">{{'Hora  inicio'}}</label>
             <input type="time" name="horas_inicio_upd" id="horas_inicio_upd" class="form-control">
           </div>        
       </div>
@@ -335,7 +335,7 @@ function validar() {
         $("#id_upd").val(data["id"]);
         $("#id_cliente_upd").val(data["id_cliente"]);
         $("#id_tecnico_upd").val(data["id_tecnico"]);
-        $("#id_servicios_upd").val(data["id_servicios"]);
+        $("#id_servicios_upd").val(data["id_servicio"]);
         $("#fecha_inicio_upd").val(data["fecha_inicio"]);
         $("#fecha_fin_upd").val(data["fecha_fin"]);
         $("#horas_inicio_upd").val(data["horas_inicio"]);

@@ -22,15 +22,15 @@ Route::redirect('/', '/servicios');
 Route::get('/servicios', 'ServiciosController@index');
 Route::post('/crearServicios','ServiciosController@store');
 Route::get('/servicios/ver','ServiciosController@edit');
-Route::post('servicios','ServiciosController@update');
+Route::post('/servicios','ServiciosController@update');
 Route::delete('/servicios/{id}','ServiciosController@destroy');
 
 
 Route::get("/clientes", "ClientesController@index");
 Route::post("/crearclientes", "ClientesController@store");
 Route::get('/clientes/ver', 'ClientesController@edit');
-Route::post('clientes', 'ClientesController@update');
-Route::delete('/clientes/{id}','ClientesController@destroy' );
+Route::post('/clientes', 'ClientesController@update');
+Route::delete('/clientes/{id}','ClientesController@destroy');
 
 Route::get('/tecnicos','TecnicosController@index');
 Route::post('/creartecnicos','TecnicosController@store');
